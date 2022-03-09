@@ -11,6 +11,9 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity2);
+        Intent intent = new Intent(this, MyIntentService.class);
+        intent.putExtra("TELA", "Tela2");
+        startService(intent);
         Button button2 = findViewById(R.id.button2);
         button2.setOnClickListener(
                 v -> startActivity(new Intent(this, MainActivity3.class))
